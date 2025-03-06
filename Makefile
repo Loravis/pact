@@ -1,8 +1,12 @@
 CC = clang
 TARGET = pact
+CCFLAGS = $(shell pkg-config --libs libcurl libzip)
+
+PACT_TEMP_DIR = /var/tmp/pact
+PACT_DIR = /var/pact
 
 $(TARGET): $(wildcard *.c) $(wildcard */*.c)
-	$(CC) -o $@ $^
+	$(CC) $(CCFLAGS) -o $@ $^
 
 .PHONY: install
 
@@ -17,7 +21,9 @@ install:
 		exit 1; \
 	fi
 
-	cp pkg /usr/bin/
+	cp $(TARGET) /usr/bin/
+	mkdir -p $(PACT_TEMP_DIR)
+	mkdir -p $(PACT_DIR)
 
 uninstall:
 	@if [ "$$(id -u)" -ne 0 ]; then \
@@ -25,4 +31,6 @@ uninstall:
 		exit 1; \
 	fi
 
-	rm -f /usr/bin/pkg
+	rm -f /usr/bin/$(TARGET)
+	rm -rf $(PACT_DIR)
+	rm -rf $(PACT_TEMP_DIR)

@@ -8,3 +8,6 @@ int arg_handler(char** args, int count);
 
 // Checks if PACT is running with superuser privileges. 
 int check_sudo();
+
+// Downloads a file
+int download_file(char** url, char** path);

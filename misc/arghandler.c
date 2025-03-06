@@ -32,7 +32,8 @@ int arg_handler(char** args, int count) {
 
     index = find(args, count, "sync");
     if (index >= 0) {
-        sync();
+        sync_db();
+        return 0;
     }
 
     return -1;

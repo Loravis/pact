@@ -4,4 +4,4 @@
 
 void show_help();
 
-int sync();
+int sync_db();

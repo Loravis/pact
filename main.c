@@ -6,7 +6,7 @@
 
 int main(int argc, char** argv){
     if (argc <= 1) {
-        printf("No arguments provided. Run boxpkg --help to get a list of valid arguments.\n");
+        printf("No arguments provided. Run pact help to get a list of valid arguments.\n");
         return 1;
     }
     char* args[argc - 1];
