@@ -1,13 +1,5 @@
-#include <git2.h>
-#include <git2/remote.h>
 #include <stdio.h>
 #include "../misc/misc.h"
-
-// Print libgit2 error messages for debugging
-void print_libgit2_error(char* action) {
-    printf("Error while %s: ", action);
-    printf("libgit2 error: %s\n", git_error_last()->message);
-}
 
 int sync_db() {
     // PACT currently only supports pulling a 
