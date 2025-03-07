@@ -1,6 +1,6 @@
 CC = clang
 TARGET = pact
-CCFLAGS = $(shell pkg-config --libs libcurl libzip)
+CCFLAGS = $(shell pkg-config --libs libcurl libarchive)
 
 PACT_TEMP_DIR = /var/tmp/pact
 PACT_DIR = /var/pact
