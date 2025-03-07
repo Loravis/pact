@@ -14,14 +14,16 @@ int find(char** strings, int count, char* string) {
 }
 
 int arg_handler(char** args, int count) {
+    // Help text option
     if (find(args, count, "help") >= 0) {
         show_help();
         return 0;
     } 
     
+    // Download source files, compile and install a package.
     int index = find(args, count, "install");
     if (index >= 0) {
-        if (count > index + 1) {
+        if (count > index + 1) { // It's probably better to check for a string at args[index + 1] instead here
             printf("Test\n");
             return 0;
         } else {
@@ -30,6 +32,7 @@ int arg_handler(char** args, int count) {
         }
     }
 
+    // Download and extract package databases
     index = find(args, count, "sync");
     if (index >= 0) {
         sync_db();
