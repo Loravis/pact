@@ -1,6 +1,6 @@
 # PACT Package Manager
 
-**PACT** (**PA**ckage **C**ompilation **T**ool) is a work in progress source based package manager for linux systems, written in C. 
+**PACT** (**PA**ckage **C**ompilation **T**ool) is a work in progress source-based package manager for linux systems, written in C. 
 
 ### State of implementation:
 - Package repo synchronization and custom repos (in progress) 
