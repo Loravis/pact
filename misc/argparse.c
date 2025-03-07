@@ -12,6 +12,7 @@ int arg_parse(char** buf, int argc, char **argv) {
         }
         char* str = (char*)malloc(length + 1);
         strncpy(str, argv[i], length);
+        str[length + 1] = '\0';
         buf[i - 1] = str;
     }
     return 0;
